@@ -1,3 +1,7 @@
 node_modules/
-.env
 .DS_Store
+
+# 环境变量文件含密钥，禁止提交；只保留示例模板
+.env
+.env.*
+!.env.example
