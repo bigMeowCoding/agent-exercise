@@ -1,0 +1,44 @@
+---
+description: Git 提交规范：中文提交信息、原子提交
+alwaysApply: true
+---
+
+# Git 提交规范
+
+## 提交信息用中文
+
+格式：`<类型>: <中文描述>`，类型前缀保留英文，描述必须是中文。
+
+| 类型 | 用途 |
+|------|------|
+| `feat` | 新功能 |
+| `fix` | 修复问题 |
+| `refactor` | 重构，不改变行为 |
+| `docs` | 文档 |
+| `chore` | 依赖、配置、构建等杂项 |
+| `test` | 测试 |
+
+- 描述写清"做了什么"，不超过一行，结尾不加句号
+- 需要补充原因时，空一行后用中文写正文
+
+```text
+# ❌ BAD
+update code
+feat: add kimi example and fix model name and update deps
+
+# ✅ GOOD
+feat: 新增 hello-kimi 示例，通过 LangChain 调用 Kimi 模型
+fix: 默认模型改为 kimi-k2.6，修复模型不存在导致的 404
+```
+
+## 每个提交都是原子提交
+
+- 一个提交只完成一个小功能或一个修复，能用一句话说清
+- 无关的改动拆成多个提交，分别 `git add` 指定文件，不要一把 `git add -A` 混在一起
+- 每个提交单独检出后项目都能正常运行
+- 描述里出现"和""以及""顺便"时，通常说明应该拆分
+
+## 安全
+
+- 提交前用 `git status` / `git diff --cached` 检查暂存内容
+- `.env` 等含密钥的文件绝不提交，只提交 `.env.example`
