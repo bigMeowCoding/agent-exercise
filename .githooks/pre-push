@@ -1,0 +1,29 @@
+#!/bin/sh
+# 阻止任何包含 .env / .env.* 文件（.env.example 除外）的提交推送到远端
+
+zero=0000000000000000000000000000000000000000
+pattern='(^|/)\.env(\.[^/]*)?$'
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+    case "$local_sha" in *[!0]*) ;; *) continue ;; esac
+
+    case "$remote_sha" in
+        *[!0]*) range="$remote_sha..$local_sha" ;;
+        *) range="$local_sha --not --remotes" ;;
+    esac
+
+    # shellcheck disable=SC2086
+    files=$(git log --format= --name-only $range \
+        | grep -E "$pattern" \
+        | grep -vE '(^|/)\.env\.example$' \
+        | sort -u)
+
+    if [ -n "$files" ]; then
+        echo "推送被拒绝：$local_ref 的提交中包含环境变量文件：" >&2
+        echo "$files" | sed 's/^/  - /' >&2
+        echo "请从提交历史中移除这些文件后再推送。" >&2
+        exit 1
+    fi
+done
+
+exit 0

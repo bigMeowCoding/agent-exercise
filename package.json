@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "git config core.hooksPath .githooks",
     "hello-kimi": "node --env-file-if-exists=.env src/hello-kimi.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
