@@ -7,6 +7,7 @@
     "prepare": "git config core.hooksPath .githooks",
     "hello-kimi": "node --env-file-if-exists=.env src/hello-kimi.mjs",
     "tool-file-read": "node --env-file-if-exists=.env src/tool-file-read.mjs",
+    "rag-memory-store": "node --env-file-if-exists=.env src/rag-memory-store.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
