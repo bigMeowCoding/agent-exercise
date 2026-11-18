@@ -9,6 +9,9 @@
     "tool-file-read": "node --env-file-if-exists=.env src/tool-file-read.mjs",
     "rag-memory-store": "node --env-file-if-exists=.env src/rag-memory-store.mjs",
     "rag-web-loader": "node --env-file-if-exists=.env src/rag-web-loader.mjs",
+    "milvus-insert": "node --env-file-if-exists=.env src/insert.mjs",
+    "milvus-search": "node --env-file-if-exists=.env src/search.mjs",
+
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
