@@ -19,6 +19,7 @@
     "summarization-memory-demo": "node --env-file-if-exists=.env src/memoryTest/summarization-memory-demo.mjs",
     "token-summarization-memory-demo": "node --env-file-if-exists=.env src/memoryTest/token-summarization-memory-demo.mjs",
     "milvus-memory-demo": "node --env-file-if-exists=.env src/memoryTest/milvus-memory-demo.mjs",
+    "retrieval-memory-demo": "node --env-file-if-exists=.env src/memoryTest/retrieval-memory-demo.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
