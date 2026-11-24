@@ -15,6 +15,7 @@
     "ebook-search": "node --env-file-if-exists=.env src/ebook-search.mjs",
     "memory-demo": "node --env-file-if-exists=.env src/memoryTest/in-memory-demo.mjs",
     "file-history-demo": "node --env-file-if-exists=.env src/memoryTest/file-history-demo.mjs",
+    "truncation-demo": "node --env-file-if-exists=.env src/memoryTest/truncation-demo.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
