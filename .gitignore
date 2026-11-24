@@ -8,3 +8,7 @@ node_modules/
 
 # 电子书等本地大文件/版权内容，不入库
 resource/*.epub
+
+# 本地对话历史（file-history-demo 运行时生成）
+chat_history.json
+.history/
