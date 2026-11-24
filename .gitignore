@@ -5,3 +5,6 @@ node_modules/
 .env
 .env.*
 !.env.example
+
+# 电子书等本地大文件/版权内容，不入库
+resource/*.epub
