@@ -11,7 +11,8 @@
     "rag-web-loader": "node --env-file-if-exists=.env src/rag-web-loader.mjs",
     "milvus-insert": "node --env-file-if-exists=.env src/insert.mjs",
     "milvus-search": "node --env-file-if-exists=.env src/search.mjs",
-
+    "ebook-writer": "node --env-file-if-exists=.env src/ebook-writer.mjs",
+    "ebook-search": "node --env-file-if-exists=.env src/ebook-search.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -26,6 +27,8 @@
     "@langchain/textsplitters": "^1.0.2",
     "@zilliz/milvus2-sdk-node": "^3.0.8",
     "cheerio": "^1.2.0",
+    "epub2": "^3.0.2",
+    "html-to-text": "^10.0.1",
     "zod": "^4.6.7"
   }
 }
